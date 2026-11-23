@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar · HelpDesk TI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="login-body">
+  <div class="bg-glow" aria-hidden="true"></div>
+  <main class="login-wrap">
+    <section class="card login-card">
+      <div class="brand login-brand">
+        <span class="brand-text">HelpDesk<strong>TI</strong></span>
+      </div>
+      <h1>Acesse sua conta</h1>
+      <p class="subtitle">Entre para abrir e acompanhar chamados de TI.</p>
+
+      <div id="login-error" class="toast toast-error login-msg" role="alert" hidden></div>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" autocomplete="email" placeholder="voce@exemplo.com" required>
+        </div>
+        <div class="field">
+          <label for="password">Senha</label>
+          <input type="password" id="password" autocomplete="current-password" placeholder="Mínimo de 6 caracteres" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="btn-login">Entrar</button>
+        <button type="button" class="btn btn-secondary btn-block" id="btn-signup">Criar conta</button>
+      </form>
+
+      <div class="login-sep"><span>ou</span></div>
+
+      <button type="button" class="btn btn-ghost btn-block" id="btn-google">Entrar com Google</button>
+    </section>
+  </main>
+  <script type="module" src="/js/login.js"></script>
+</body>
+</html>

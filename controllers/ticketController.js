@@ -81,13 +81,18 @@ exports.new = async (req, res) => {
 // POST /tickets
 exports.create = async (req, res) => {
   const data = pickTicket(req.body);
+  // Vínculo com o usuário logado: vem do token validado (req.user), nunca do formulário.
+  data.uid = req.user.uid;
+  data.autorEmail = req.user.email;
+  data.autorNome = req.user.nome;
+  if (!data.solicitante) data.solicitante = req.user.nome;
   try {
     const ticket = await Ticket.create(data);
     await Comment.create({
       ticketId: ticket.id,
       autor: 'Sistema',
       tipo: 'sistema',
-      mensagem: `Chamado aberto por ${ticket.solicitante}.`,
+      mensagem: `Chamado aberto por ${ticket.autorNome} (${ticket.autorEmail}).`,
     });
     res.redirect(`/tickets/${ticket.id}?msg=${encodeURIComponent(`Chamado ${ticket.protocolo} criado com sucesso!`)}`);
   } catch (err) {

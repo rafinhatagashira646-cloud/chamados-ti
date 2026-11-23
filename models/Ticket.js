@@ -31,6 +31,19 @@ const Ticket = sequelize.define(
     setor: {
       type: DataTypes.STRING(60),
     },
+    // Usuário do Firebase que abriu o chamado (preenchidos pelo servidor a partir do token validado)
+    uid: {
+      type: DataTypes.STRING(128),
+      allowNull: true,
+    },
+    autorEmail: {
+      type: DataTypes.STRING(160),
+      allowNull: true,
+    },
+    autorNome: {
+      type: DataTypes.STRING(120),
+      allowNull: true,
+    },
     prioridade: {
       type: DataTypes.ENUM(...Object.keys(PRIORIDADES)),
       allowNull: false,

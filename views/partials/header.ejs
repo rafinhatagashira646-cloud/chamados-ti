@@ -9,6 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+  <!-- Esconde a página até o Firebase confirmar que há usuário logado -->
+  <style>html.auth-pending body { visibility: hidden; }</style>
+  <script>document.documentElement.classList.add('auth-pending');</script>
+  <script type="module" src="/js/auth.js"></script>
 </head>
 <body>
   <div class="bg-glow" aria-hidden="true"></div>
@@ -29,6 +33,13 @@
       </nav>
 
       <a href="/tickets/new" class="btn btn-primary btn-block sidebar-cta" id="sidebar-new-ticket"><%- icon('plus') %> Novo chamado</a>
+
+      <div class="auth-box" id="auth-box">
+        <span class="auth-label">Logado como</span>
+        <strong id="auth-name"></strong>
+        <span id="auth-email" class="muted"></span>
+        <button type="button" class="btn btn-ghost btn-sm btn-block" id="auth-logout">Sair</button>
+      </div>
     </aside>
 
     <main class="main">

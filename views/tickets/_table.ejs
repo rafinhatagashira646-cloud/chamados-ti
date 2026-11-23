@@ -25,7 +25,7 @@
             <td><a href="/tickets/<%= t.id %>" class="ticket-code"><%= t.protocolo %></a></td>
             <td class="cell-main">
               <a href="/tickets/<%= t.id %>"><strong><%= t.titulo %></strong></a>
-              <span class="muted"><%= t.solicitante %><%= t.setor ? ' · ' + t.setor : '' %></span>
+              <span class="muted">Solicitante: <%= t.autorNome ? t.autorNome + ' (' + t.autorEmail + ')' : t.solicitante %><%= t.setor ? ' · ' + t.setor : '' %></span>
             </td>
             <td>
               <% if (t.categoria) { %>

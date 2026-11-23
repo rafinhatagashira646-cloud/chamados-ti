@@ -601,3 +601,19 @@ time.muted { font-size: 12px; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
 }
+
+/* ---------- Autenticação ---------- */
+.auth-box { display: flex; flex-direction: column; gap: 4px; margin-top: 14px; padding: 14px; border-radius: var(--radius-sm); background: var(--surface); border: 1px solid var(--border); }
+.auth-box strong { font-size: 14px; word-break: break-word; }
+.auth-box .muted { font-size: 12px; word-break: break-all; }
+.auth-label { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.auth-box .btn { margin-top: 8px; }
+.login-body { display: grid; place-items: center; min-height: 100vh; }
+.login-wrap { position: relative; width: 100%; max-width: 400px; padding: 16px; }
+.login-card h1 { font-size: 22px; margin: 12px 0 4px; }
+.login-card .field { margin-top: 14px; }
+.login-card .btn-block { margin-top: 10px; }
+.login-msg { position: static; margin: 14px 0 0; }
+.login-sep { display: flex; align-items: center; gap: 10px; margin: 18px 0 8px; color: var(--muted); font-size: 12px; }
+.login-sep::before, .login-sep::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+.login-msg[hidden] { display: none; }

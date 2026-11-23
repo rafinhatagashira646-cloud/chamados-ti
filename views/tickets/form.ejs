@@ -10,7 +10,8 @@
 
 <%- include('../partials/errors') %>
 
-<form method="POST" action="<%= isEdit ? '/tickets/' + ticket.id + '?_method=PUT' : '/tickets' %>" class="form-layout" id="ticket-form" novalidate>
+<form method="POST" action="<%= isEdit ? '/tickets/' + ticket.id + '?_method=PUT' : '/tickets' %>" class="form-layout" id="ticket-form"<%- isEdit ? '' : ' data-auth-form' %> novalidate>
+  <input type="hidden" name="idToken" value="">
   <section class="card">
     <h2 class="form-section"><%- icon('ticket') %> Detalhes do problema</h2>
 

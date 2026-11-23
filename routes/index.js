@@ -4,6 +4,7 @@ const tickets = require('../controllers/ticketController');
 const comments = require('../controllers/commentController');
 const technicians = require('../controllers/technicianController');
 const categories = require('../controllers/categoryController');
+const requireAuth = require('../middlewares/requireAuth');
 
 const router = express.Router();
 
@@ -13,7 +14,7 @@ router.get('/', dashboard.index);
 // Chamados
 router.get('/tickets', tickets.index);
 router.get('/tickets/new', tickets.new);
-router.post('/tickets', tickets.create);
+router.post('/tickets', requireAuth, tickets.create);
 router.get('/tickets/:id', tickets.show);
 router.get('/tickets/:id/edit', tickets.edit);
 router.put('/tickets/:id', tickets.update);

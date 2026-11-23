@@ -9,7 +9,7 @@
       <span class="badge badge-<%= PRIORIDADES[ticket.prioridade].cor %>"><%= PRIORIDADES[ticket.prioridade].label %></span>
     </div>
     <h1><%= ticket.titulo %></h1>
-    <p class="subtitle">Aberto <%= timeAgo(ticket.createdAt) %> por <strong><%= ticket.solicitante %></strong></p>
+    <p class="subtitle">Aberto <%= timeAgo(ticket.createdAt) %> · Solicitante: <strong><%= ticket.autorNome || ticket.solicitante %></strong><%= ticket.autorEmail ? ' (' + ticket.autorEmail + ')' : '' %></p>
   </div>
   <div class="header-actions">
     <a href="/tickets/<%= ticket.id %>/edit" class="btn btn-secondary" id="ticket-edit"><%- icon('edit', 16) %> Editar</a>
@@ -111,7 +111,7 @@
         <div><dt>Responsável</dt><dd>
           <% if (ticket.tecnico) { %><span class="person"><span class="avatar avatar-sm"><%= ticket.tecnico.iniciais %></span><%= ticket.tecnico.nome %></span><% } else { %><span class="muted">Não atribuído</span><% } %>
         </dd></div>
-        <div><dt><%- icon('user', 14) %> Solicitante</dt><dd><%= ticket.solicitante %></dd></div>
+        <div><dt><%- icon('user', 14) %> Solicitante</dt><dd><%= ticket.autorNome ? ticket.autorNome + ' (' + ticket.autorEmail + ')' : ticket.solicitante %></dd></div>
         <% if (ticket.emailSolicitante) { %>
           <div><dt><%- icon('mail', 14) %> E-mail</dt><dd><a href="mailto:<%= ticket.emailSolicitante %>"><%= ticket.emailSolicitante %></a></dd></div>
         <% } %>

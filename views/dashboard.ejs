@@ -53,7 +53,7 @@
               <div class="ticket-row-main">
                 <span class="ticket-code"><%= t.protocolo %></span>
                 <strong><%= t.titulo %></strong>
-                <span class="muted"><%= t.solicitante %><%= t.setor ? ' · ' + t.setor : '' %> · <%= timeAgo(t.createdAt) %></span>
+                <span class="muted">Solicitante: <%= t.autorNome ? t.autorNome + ' (' + t.autorEmail + ')' : t.solicitante %><%= t.setor ? ' · ' + t.setor : '' %> · <%= timeAgo(t.createdAt) %></span>
               </div>
               <div class="ticket-row-side">
                 <span class="badge badge-<%= PRIORIDADES[t.prioridade].cor %>"><%= PRIORIDADES[t.prioridade].label %></span>
