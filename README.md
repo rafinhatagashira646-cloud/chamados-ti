@@ -1,8 +1,12 @@
+**Aluno(a):** Rafaela da Costa Tagashira
+
+**Link do Render:** https://chamados-ti-rafaela.onrender.com
+
 # HelpDesk TI — Organização de Chamados
 
 Sistema web local para abertura, acompanhamento e organização de chamados de TI, construído no padrão **MVC** com **Node.js, Express, EJS, CSS e Sequelize** (SQLite).
 
-> Sem login: o sistema foi pensado para rodar localmente de forma simples.
+> Acesso com login (Firebase Authentication): e-mail/senha ou Google. Cada chamado fica vinculado ao usuário que o abriu.
 
 ## Como rodar
 
